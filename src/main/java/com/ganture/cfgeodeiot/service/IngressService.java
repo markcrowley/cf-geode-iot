@@ -18,5 +18,5 @@ public interface IngressService {
 
   public EvictingQueue<SensorValue> list(String deviceId) throws LicenceException;
 
-  public Stats stats();
+  public Stats stats(String deviceId);
 }

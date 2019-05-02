@@ -34,7 +34,7 @@ public class IngressServiceImpl implements IngressService {
     }
     for (SensorValue value : ingressValues) {
       if (!sensorValues.containsKey(value.getDeviceId())) {
-        EvictingQueue<SensorValue> evictingQueue = EvictingQueue.create(100);
+        EvictingQueue<SensorValue> evictingQueue = EvictingQueue.create(1000);
         evictingQueue.add(value);
         sensorValues.put(value.getDeviceId(), evictingQueue);
       } else {
@@ -53,10 +53,13 @@ public class IngressServiceImpl implements IngressService {
     return sensorValues.get(deviceId);
   }
 
-  public Stats stats() {
+  public Stats stats(String deviceId) {
     Stats stats = new Stats();
+    stats.setDeviceId(deviceId);
     stats.setGenerated(LocalDateTime.now());
-    stats.setCount(new Long(IngressServiceImpl.sensorValues.size()));
+    stats.setCount(new Long(null != IngressServiceImpl.sensorValues.get(deviceId)
+        ? IngressServiceImpl.sensorValues.get(deviceId).size()
+        : 0L));
     Random random = new Random();
     stats.setX(random.nextDouble());
     stats.setY(random.nextDouble());

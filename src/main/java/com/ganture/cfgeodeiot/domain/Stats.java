@@ -6,6 +6,8 @@ import lombok.Data;
 @Data
 public class Stats {
 
+  String deviceId;
+
   LocalDateTime generated;
 
   Long count;

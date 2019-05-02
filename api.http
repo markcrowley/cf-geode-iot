@@ -5,7 +5,35 @@ Content-Type: application/json
 [
   {
     "timestamp": "2019-05-02T08:13:51.773",
+    "deviceId": "test11",
+    "x": 1.0,
+    "y": 2.0,
+    "z": 3.0
+  },
+  {
+    "timestamp": "2019-05-02T08:13:51.773",
     "deviceId": "test",
+    "x": 1.0,
+    "y": 2.0,
+    "z": 3.0
+  },
+  {
+    "timestamp": "2019-05-02T08:13:51.773",
+    "deviceId": "test",
+    "x": 1.0,
+    "y": 2.0,
+    "z": 3.0
+  },
+  {
+    "timestamp": "2019-05-02T08:13:51.773",
+    "deviceId": "test",
+    "x": 1.0,
+    "y": 2.0,
+    "z": 3.0
+  },
+  {
+    "timestamp": "2019-05-02T08:13:51.773",
+    "deviceId": "test11",
     "x": 1.0,
     "y": 2.0,
     "z": 3.0
@@ -33,67 +61,14 @@ Content-Type: application/json
   }
 ]
 
-
-
-# { "sensorValues":[
-#     {
-#       "timestamp":"2019-05-01T12:00:00",
-#       "x":"1.123",
-#       "y":"-2.345",
-#       "z":"-2.345"
-#     },
-#     {
-#       "timestamp":"2019-05-01T12:00:01",
-#       "x":"1.123",
-#       "y":"-2.345",
-#       "z":"-2.345"
-#     },
-#     {
-#       "timestamp":"2019-05-01T12:00:01",
-#       "x":"1.123",
-#       "y":"-2.345",
-#       "z":"-2.345"
-#     }  
-#   ]
-# }
-
 ###
 
 # @name stats
-GET {{host}}/v1/stats HTTP/1.1
+GET {{host}}/v1/stats/test HTTP/1.1
 Cache-Control: no-cache
 
 ###
 
 # @name values
-GET {{host}}/v1/values/123 HTTP/1.1
+GET {{host}}/v1/values/test11 HTTP/1.1
 Cache-Control: no-cache
-
-
-
-
-
-
-
-{
-  "sensorValues":[
-    {
-      "timestamp":"2019-05-01T12:00:00",
-      "x":"1.123",
-      "y":"-2.345",
-      "z":"-2.345"
-  },
-    {
-      "timestamp":"2019-05-01T12:00:01",
-      "x":"1.123",
-      "y":"-2.345",
-      "z":"-2.345"
-  },
-  {
-      "timestamp":"2019-05-01T12:00:01",
-      "x":"1.123",
-      "y":"-2.345",
-      "z":"-2.345"
-  }  
-]
-}
