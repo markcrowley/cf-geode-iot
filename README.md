@@ -6,6 +6,6 @@ The API provide the following end-points:
 
 1. `POST` `/v1/ingress`
 2. `GET` `/v1/values/{deviceId}`
-3. `GET` `/v1/stats`
+3. `GET` `/v1/stats/{deviceId}`
 
 See … for the API documentation
